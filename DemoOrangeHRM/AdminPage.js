@@ -1,3 +1,5 @@
+const { expect } = require("@playwright/test");
+
 exports.AdminPage = class AdminPage {
   constructor(page) {
     this.page = page;
@@ -28,17 +30,23 @@ exports.AdminPage = class AdminPage {
   }
 
   async admin(username, employeename) {
+    await expect(this.AdminBtn).toBeVisible();
     await this.AdminBtn.click();
+    await expect(this.userNameInput).toBeEditable();
     await this.userNameInput.fill(username);
     await this.userRole.click();
+    await expect(this.roleOption).toHaveText("ESS");
     await this.roleOption.click();
     await this.employeeName.fill(employeename);
     await this.page.waitForSelector("//div[@role='option']", {
       state: "visible",
     });
     await this.employeeSelect.click();
+    await expect(this.employeeName).toHaveValue("Peter Mac Anderson");
     await this.status.click();
+    await expect(this.statusOption).toBeVisible();
     await this.statusOption.click();
+    await expect(this.searchBtn).toBeEnabled();
     await this.searchBtn.click();
   }
 };

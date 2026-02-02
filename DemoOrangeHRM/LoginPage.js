@@ -12,7 +12,7 @@ exports.LoginPage = class LoginPage {
   }
 
   async gotoLoginPage() {
-    await this.page.goto("/web/index.php/auth/login");
+    await this.page.goto("web/index.php/auth/login");
     await expect(this.page).toHaveURL("/web/index.php/auth/login");
     await expect(this.page).toHaveTitle("OrangeHRM");
   }
@@ -25,5 +25,7 @@ exports.LoginPage = class LoginPage {
     await expect(this.submitBtn).toBeEnabled();
     await this.submitBtn.click();
     await expect(this.dashbaordPage).toBeVisible();
+
+    await this.page.close();
   }
 };
