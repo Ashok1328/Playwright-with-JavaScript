@@ -1,24 +1,29 @@
+const { expect } = require("@playwright/test");
+
 exports.LoginPage = class LoginPage {
   constructor(page) {
     this.page = page;
 
-     // Locators (defined once for reusability & readability) eg: page.locator(locator_value)
-    this.userName = "input[name='username']",
-    this.userPassword = "input[name='password']",
-    this.submitBtn = "//button[@type='submit']";
+    //Locators
+    this.userName = page.locator("input[name='username']");
+    this.userPassword = page.locator("input[name='password']");
+    this.submitBtn = page.locator("//button[@type='submit']");
+    this.dashbaordPage = page.locator("//h6[normalize-space()='Dashboard']");
   }
-    // naming conventions login lowercase do not user capitalcase
+
   async gotoLoginPage() {
-    // user navigateto and baseurl value from the playwright.config.js file
-    await this.page.goto(
-      "https://opensource-demo.orangehrmlive.com/web/index.php/auth/login",
-    );
+    await this.page.goto("/web/index.php/auth/login");
+    await expect(this.page).toHaveURL("/web/index.php/auth/login");
+    await expect(this.page).toHaveTitle("OrangeHRM");
   }
-  // Login to login lowercase
-  async Login(username, passsword) {
-    // use wait for visisbel element donot do hardcode playwright might not find the element due to slow network
-    await this.page.locator(this.userName).fill(username);
-    await this.page.locator(this.userPassword).fill(passsword); // typo error password 
-    await this.page.locator(this.submitBtn).click();
+
+  async login(username, password) {
+    await expect(this.userName).toBeVisible();
+    await this.userName.fill(username);
+    await expect(this.userPassword).toBeVisible();
+    await this.userPassword.fill(password);
+    await expect(this.submitBtn).toBeEnabled();
+    await this.submitBtn.click();
+    await expect(this.dashbaordPage).toBeVisible();
   }
 };
