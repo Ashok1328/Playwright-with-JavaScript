@@ -25,7 +25,5 @@ exports.LoginPage = class LoginPage {
     await expect(this.submitBtn).toBeEnabled();
     await this.submitBtn.click();
     await expect(this.dashbaordPage).toBeVisible();
-
-    await this.page.close();
   }
 };
