@@ -7,9 +7,19 @@ test("Pagination", async ({ page }) => {
   const table = page.locator("#productTable");
   const rows = table.locator("tbody tr");
 
+  // multiple product select
+  await selectProduct(rows, page, "Television");
+  await selectProduct(rows, page, "Gaming Console");
+
+  await page.close();
+
+});
+
+async function selectProduct(rows, page, name) {
   const matchedRow = rows.filter({
     has: page.locator("td"),
-    hasText: "Television",
+    hasText: name,
   });
   await matchedRow.locator("input").check();
-});
+}
+

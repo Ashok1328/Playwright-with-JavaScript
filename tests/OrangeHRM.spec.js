@@ -9,7 +9,6 @@ test("OrangeHRM", async ({ page }) => {
   await login.gotoLoginPage();
   await login.login("Admin", "admin123");
 
-
   //Admin
   const admin = new AdminPage(page);
   await admin.admin("ESS", "Peter");
