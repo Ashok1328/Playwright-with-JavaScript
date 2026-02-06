@@ -16,11 +16,6 @@ test.beforeAll(async ({ browser }) => {
   await login(page);
 });
 
-test.afterAll(async ()=>
-{
-  await page.locator("#logout2").click();
-})
-
 test("Home Page test", async () => {
   const product = await page.$$(".hrefch");
   expect(product).toHaveLength(9);
