@@ -17,10 +17,8 @@ test("Register", async ({ page }) => {
 
   await page.locator("#address").fill("Kathmandu");
 
-  //await page.getByText('Select Country').click();
   await page.click("(//input[@role='combobox'])[1]");
 
-  //await page.getByRole('option', {name: 'Nepal'}).click();
   await page.click("//div[normalize-space()='Nepal']");
 
   await page.click("(//input[@role='combobox'])[2]");
