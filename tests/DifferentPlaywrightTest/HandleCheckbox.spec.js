@@ -20,7 +20,7 @@ test("Handle Checkbox", async ({ page }) => {
   //for uncheck boxes
   for (const locator of checkboxLocators) {
     if (await page.locator(locator).isChecked()) {
-      await page.locator(locator).uncheck;
+       page.locator(locator).uncheck;
     }
   }
 });
