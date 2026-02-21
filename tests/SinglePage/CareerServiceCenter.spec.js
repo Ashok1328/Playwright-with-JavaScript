@@ -1,8 +1,6 @@
 import { test, expect } from "@playwright/test";
 
 test("Register", async ({ page }) => {
-  //await page.goto("https://recruiter.stage.careerservicelab.com/register");
-
   await page.locator("#search").fill("ashok12");
 
   await page.locator("//button[text()='Search']").click();
