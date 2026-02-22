@@ -1,41 +1,27 @@
 {
-<<<<<<< HEAD
   "name": "playwright-with-javascript",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "scripts": {},
-=======
-  "name": "pom",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "type": "commonjs",
   "scripts": {
-    "clean:allure": "rmdir /s /q test-report\\allure-results test-report\\allure-report || exit 0",
+    "clean:allure": "rmdir /s /q allure-results allure-report || exit 0",
     "test": "npm run clean:allure && playwright test",
     "test:Login": "npm run clean:allure && playwright test tests/Login.spec.js",
     "test:headed": "npm run clean:allure && playwright test --headed",
-    "allure:generate": "allure generate test-report/allure-results -o test-report/allure-report --clean",
-    "allure:open": "allure open test-report/allure-report"
+    "allure:generate": "allure generate allure-results -o allure-report --clean",
+    "allure:open": "allure open allure-report"
   },
->>>>>>> 75e4bb0 (Updated with allure-report)
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "type": "commonjs",
   "devDependencies": {
-<<<<<<< HEAD
-    "@playwright/test": "^1.58.0"
+    "@playwright/test": "^1.58.2"
   },
   "dependencies": {
     "@faker-js/faker": "^10.3.0",
-    "@types/node": "^25.2.3"
-=======
-    "@faker-js/faker": "^10.3.0",
-    "@playwright/test": "^1.58.2",
     "@types/node": "^25.2.3",
     "allure-commandline": "^2.36.0",
     "allure-playwright": "^3.4.5"
->>>>>>> 75e4bb0 (Updated with allure-report)
   }
 }
