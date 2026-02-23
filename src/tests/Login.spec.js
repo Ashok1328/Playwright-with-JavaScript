@@ -1,7 +1,6 @@
 import { test } from "@playwright/test";
 import { LoginPage } from "../Page/LoginPage";
-import { login_Data } from "../DataPage/TestData";
-
+import { login_Data } from "../data/TestData";
 
 test.describe("User Login", () => {
   test.beforeEach(async ({ page }) => {

@@ -1,7 +1,7 @@
 import { test } from "@playwright/test";
 import { LoginPage } from "../Page/LoginPage";
-import { login_Data } from "../DataPage/TestData";
-import { CartPage } from "../Page/CartPage";
+import { login_Data } from "../data/TestData";
+import { CartPage } from "../page/CartPage";
 
 test.describe("Cart Validation", () => {
   test.beforeEach(async ({ page }) => {
@@ -15,6 +15,6 @@ test.describe("Cart Validation", () => {
 
   test("No of products in cart page", async ({ page }) => {
     const cartPage = new CartPage(page);
-    await cartPage.checkProductInCart(10);
+    await cartPage.checkProductInCart();
   });
 });

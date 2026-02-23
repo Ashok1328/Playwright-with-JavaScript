@@ -1,5 +1,5 @@
 const { expect } = require("@playwright/test");
-const { shipping_Locators, cart_Locators } = require("../LocatorPage/Locators");
+const { shipping_Locators, cart_Locators } = require("../selector/Locators");
 
 exports.PlaceOrderPage = class PlaceOrderPage {
   constructor(page) {
@@ -15,7 +15,7 @@ exports.PlaceOrderPage = class PlaceOrderPage {
     this.success_Message = page.locator(shipping_Locators.success_Message);
     this.ok_Btn = page.locator(shipping_Locators.ok_Btn);
     this.cart_Btn = page.locator(cart_Locators.cart_Btn);
-    this.placeorder_Btn = page.locator(shipping_Locators.placeorder_Btn);
+    this.placeorder_Btn = page.locator(cart_Locators.placeorder_Btn);
   }
 
   async shippingAddress(data) {

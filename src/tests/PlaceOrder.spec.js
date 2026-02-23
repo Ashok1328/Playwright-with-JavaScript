@@ -1,8 +1,8 @@
 import { test } from "@playwright/test";
-import { login_Data, products_Data, shipping_Data } from "../DataPage/TestData";
-import { PlaceOrderPage } from "../Page/PlaceOrderPage";
 import { LoginPage } from "../Page/LoginPage";
-import { ProductPage } from "../Page/ProductPage";
+import { login_Data, products_Data, shipping_Data } from "../data/TestData";
+import { ProductPage } from "../page/ProductPage";
+import { PlaceOrderPage } from "../page/PlaceOrderPage";
 
 test.describe("Shipping Address", () => {
   test.beforeEach(async ({ page }) => {
@@ -17,7 +17,7 @@ test.describe("Shipping Address", () => {
   test("Place Order", async ({ page }) => {
     const productPage = new ProductPage(page);
     await productPage.addMultipleProducts(products_Data());
-    
+
     const placeOrder = new PlaceOrderPage(page);
     await placeOrder.shippingAddress(shipping_Data());
   });

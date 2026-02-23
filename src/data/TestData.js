@@ -39,11 +39,13 @@ exports.login_Data = () => {
   };
 };
 
-exports.products_Data = () => [
-  { category: "Phones", product: "Iphone 6 32gb" },
-  { category: "Laptops", product: "MacBook air" },
-  { category: "Monitors", product: "ASUS Full HD" },
-];
+exports.products_Data = () => {
+  return [
+    { category: "Phones", product: "Iphone 6 32gb" },
+    { category: "Laptops", product: "MacBook air" },
+    { category: "Monitors", product: "ASUS Full HD" },
+  ];
+};
 
 exports.shipping_Data = () => ({
   fullName: faker.person.fullName(),

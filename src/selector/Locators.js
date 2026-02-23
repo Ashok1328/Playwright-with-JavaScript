@@ -13,13 +13,12 @@ exports.login_Locators = {
 };
 
 exports.home_Locators = {
-  product_No: ".card .hrefch",
+  product_No: ".hrefch",
 };
 
 exports.product_Locators = {
   category_ByName: (category) => `//a[normalize-space()='${category}']`,
   product_ByName: (name) => `//a[normalize-space()='${name}']`,
-  single_Product: "//a[normalize-space()='Nexus 6']",
   addtocart_Btn: "//a[normalize-space()='Add to cart']",
   home_Btn: "//li[@class='nav-item active']//a[@class='nav-link']",
 };
@@ -27,10 +26,10 @@ exports.product_Locators = {
 exports.cart_Locators = {
   cart_Btn: "//a[@id='cartur']",
   checkcart_Items: "#tbodyid tr",
+  placeorder_Btn: "//button[normalize-space()='Place Order']",
 };
 
 exports.shipping_Locators = {
-  placeorder_Btn: "//button[normalize-space()='Place Order']",
   user_Input: "#name",
   country_Input: "#country",
   city_Input: "#city",
@@ -39,7 +38,7 @@ exports.shipping_Locators = {
   year_Input: "#year",
   purchase_Btn: "//button[normalize-space()='Purchase']",
   success_Message: "//h2[normalize-space()='Thank you for your purchase!']",
-  ok_Btn: "button.confirm",
+  ok_Btn: "//button[normalize-space()='OK']",
 };
 
 exports.logout_Locators = {

@@ -1,5 +1,5 @@
 const { expect } = require("@playwright/test");
-const { product_Locators } = require("../LocatorPage/Locators");
+const { product_Locators } = require("../selector/Locators");
 
 exports.ProductPage = class ProductPage {
   constructor(page) {

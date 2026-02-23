@@ -1,5 +1,5 @@
 const { expect } = require("@playwright/test");
-const { logout_Locators } = require("../LocatorPage/Locators");
+const { logout_Locators } = require("../selector/Locators");
 
 exports.LogoutPage = class LogoutPage {
   constructor(page) {

@@ -1,15 +1,19 @@
 import { test } from "@playwright/test";
-import { RegisterPage } from "../src/BasePage/RegisterPage";
-import { register_Data } from "../src/DataPage/RegisterData";
-import { login_Data } from "../src/DataPage/LoginData";
-import { HomePage } from "../src/BasePage/HomePage";
-import { CartPage } from "../src/BasePage/CartPage";
-import { ProductPage } from "../src/BasePage/ProductPage";
-import { PlaceOrderPage } from "../src/BasePage/PlaceOrderPage";
-import { LogoutPage } from "../src/BasePage/LogoutPage";
-import { products_Data } from "../src/DataPage/ProductData";
-import { shipping_Data } from "../src/DataPage/ShippingData";
-import { LoginPage } from "../src/BasePage/LoginPage";
+import { RegisterPage } from "../page/RegisterPage";
+import { HomePage } from "../page/HomePage";
+import { ProductPage } from "../page/ProductPage";
+import { CartPage } from "../page/CartPage";
+import { PlaceOrderPage } from "../page/PlaceOrderPage";
+import { LogoutPage } from "../page/LogoutPage";
+import { LoginPage } from "../Page/LoginPage";
+
+import {
+  login_Data,
+  products_Data,
+  register_Data,
+  shipping_Data,
+} from "../data/TestData";
+import { Urls } from "../UtilsPage/urls";
 
 test("DemoBlaze", async ({ page }) => {
   const registerPage = new RegisterPage(page);
@@ -19,14 +23,15 @@ test("DemoBlaze", async ({ page }) => {
   const cartPage = new CartPage(page);
   const placeOrderPage = new PlaceOrderPage(page);
   const logoutPage = new LogoutPage(page);
+  const urls = new Urls(page);
 
   const registerUser = register_Data();
-  const loginUser = login_Data();
+  const loginUser = login_Data().valid;
   const product = products_Data();
   const shipping = shipping_Data();
 
   //Register
-  await registerPage.open();
+  await urls.openPage();
   await registerPage.register(registerUser);
 
   //Login
@@ -36,10 +41,10 @@ test("DemoBlaze", async ({ page }) => {
   await homePage.verifyProductCount(9);
 
   // Add multiple products in cart
-  await productPage.addProducts(product);
+  await productPage.addMultipleProducts(product);
 
   // Check how many products are added
-  await cartPage.checkProductInCart();
+  await cartPage.checkProductInCart(product.length);
 
   //Shipping address
   await placeOrderPage.shippingAddress(shipping);

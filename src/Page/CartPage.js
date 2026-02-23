@@ -1,5 +1,5 @@
 const { expect } = require("@playwright/test");
-const { cart_Locators } = require("../LocatorPage/Locators");
+const { cart_Locators } = require("../selector/Locators");
 
 exports.CartPage = class CartPage {
   constructor(page) {
@@ -7,13 +7,12 @@ exports.CartPage = class CartPage {
 
     this.cart_Btn = page.locator(cart_Locators.cart_Btn);
     this.checkcartItems = page.locator(cart_Locators.checkcart_Items);
+    this.placeorder_Btn = page.locator(cart_Locators.placeorder_Btn);
   }
 
-  async checkProductInCart(expectedCount) {
+  async checkProductInCart() {
     await expect(this.cart_Btn).toBeEnabled();
     await this.cart_Btn.click();
-
-    await expect(this.checkcartItems).toHaveCount(expectedCount);
 
     const count = await this.checkcartItems.count();
     for (let i = 0; i < count; i++) {

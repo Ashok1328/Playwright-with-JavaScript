@@ -1,8 +1,8 @@
 import { test } from "@playwright/test";
 import { LoginPage } from "../Page/LoginPage";
-import { login_Data, products_Data } from "../DataPage/TestData";
-import { HomePage } from "../Page/HomePage";
-import { ProductPage } from "../Page/ProductPage";
+import { login_Data, products_Data } from "../data/TestData";
+import { HomePage } from "../page/HomePage";
+import { ProductPage } from "../page/ProductPage";
 
 test.describe("Add Product to Cart", () => {
   test.beforeEach(async ({ page }) => {
