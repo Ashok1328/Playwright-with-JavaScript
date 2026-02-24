@@ -5,6 +5,7 @@ exports.HomePage = class HomePage {
   constructor(page) {
     this.page = page;
 
+    //Locators
     this.product_No = page.locator(home_Locators.product_No);
   }
 

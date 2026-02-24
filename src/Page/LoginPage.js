@@ -5,6 +5,7 @@ exports.LoginPage = class LoginPage {
   constructor(page) {
     this.page = page;
 
+    //Locators
     this.login_Btn = page.locator(login_Locators.login_Btn);
     this.username_Input = page.locator(login_Locators.username_Input);
     this.password_Input = page.locator(login_Locators.password_Input);

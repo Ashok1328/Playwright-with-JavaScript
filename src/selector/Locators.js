@@ -19,6 +19,7 @@ exports.home_Locators = {
 exports.product_Locators = {
   category_ByName: (category) => `//a[normalize-space()='${category}']`,
   product_ByName: (name) => `//a[normalize-space()='${name}']`,
+  single_Product: "//a[normalize-space()='Samsung galaxy s6']",
   addtocart_Btn: "//a[normalize-space()='Add to cart']",
   home_Btn: "//li[@class='nav-item active']//a[@class='nav-link']",
 };
@@ -26,6 +27,7 @@ exports.product_Locators = {
 exports.cart_Locators = {
   cart_Btn: "//a[@id='cartur']",
   checkcart_Items: "#tbodyid tr",
+  delete_Product: "//a[normalize-space()='Delete']",
   placeorder_Btn: "//button[normalize-space()='Place Order']",
 };
 

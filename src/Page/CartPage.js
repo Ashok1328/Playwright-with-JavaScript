@@ -7,6 +7,7 @@ exports.CartPage = class CartPage {
 
     this.cart_Btn = page.locator(cart_Locators.cart_Btn);
     this.checkcartItems = page.locator(cart_Locators.checkcart_Items);
+    this.delete_Product = page.locator(cart_Locators.delete_Product);
     this.placeorder_Btn = page.locator(cart_Locators.placeorder_Btn);
   }
 
@@ -21,5 +22,21 @@ exports.CartPage = class CartPage {
 
     await expect(this.placeorder_Btn).toBeEnabled();
     await this.placeorder_Btn.click();
+  }
+
+  async deleteProductFromCart(productName) {
+    await expect(this.cart_Btn).toBeEnabled();
+    await this.cart_Btn.click();
+
+    const count = await this.checkcartItems.count();
+    for (let i = 0; i < count; i++) {
+      await expect(this.checkcartItems.nth(i)).toBeVisible();
+    }
+
+    const delete_Btn = this.page.locator(
+      `//tr[td[normalize-space()='${productName}']]//a[normalize-space()='Delete']`,
+    );
+    await expect(delete_Btn).toHaveCount(1);
+    await delete_Btn.click();
   }
 };

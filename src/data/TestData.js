@@ -47,6 +47,10 @@ exports.products_Data = () => {
   ];
 };
 
+exports.single_Product_Data = () => {
+  return { category: "Phones", product: "Samsung galaxy s6" };
+};
+
 exports.shipping_Data = () => ({
   fullName: faker.person.fullName(),
   country: faker.location.country(),

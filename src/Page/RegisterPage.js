@@ -1,9 +1,11 @@
 const { expect } = require("@playwright/test");
 const { register_Locators } = require("../selector/Locators");
+const { Urls } = require("../config/BaseUrl");
 
 exports.RegisterPage = class RegisterPage {
   constructor(page) {
     this.page = page;
+    this.urls = new Urls(page);
 
     //Locators
     this.signup_Btn = page.locator(register_Locators.signup_Btn);
@@ -13,7 +15,7 @@ exports.RegisterPage = class RegisterPage {
   }
 
   async gotoRegisterPage() {
-    await this.page.goto("/index.html");
+    await this.urls.openPage();
     await expect(this.page).toHaveURL(/index.html/);
     await expect(this.page).toHaveTitle("STORE");
   }

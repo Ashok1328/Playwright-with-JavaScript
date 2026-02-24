@@ -9,8 +9,8 @@
     "test": "npm run clean:allure && playwright test",
     "test:Login": "npm run clean:allure && playwright test tests/Login.spec.js",
     "test:headed": "npm run clean:allure && playwright test --headed",
-    "allure:generate": "allure generate src/report/allure-results -o src/report/allure-report --clean",
-    "allure:open": "allure open src/report/allure-report"
+    "allure:generate": "allure generate allure-results -o allure-report --clean",
+    "allure:open": "allure open allure-report"
   },
   "keywords": [],
   "author": "",

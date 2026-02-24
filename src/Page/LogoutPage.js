@@ -5,6 +5,7 @@ exports.LogoutPage = class LogoutPage {
   constructor(page) {
     this.page = page;
 
+    //Locators
     this.logout_Btn = page.locator(logout_Locators.logout_Btn);
   }
 

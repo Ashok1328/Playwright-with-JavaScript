@@ -5,6 +5,7 @@ exports.PlaceOrderPage = class PlaceOrderPage {
   constructor(page) {
     this.page = page;
 
+    //Locators
     this.user_Input = page.locator(shipping_Locators.user_Input);
     this.country_Input = page.locator(shipping_Locators.country_Input);
     this.city_Input = page.locator(shipping_Locators.city_Input);

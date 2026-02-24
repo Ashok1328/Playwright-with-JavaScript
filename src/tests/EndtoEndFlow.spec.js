@@ -13,7 +13,7 @@ import {
   register_Data,
   shipping_Data,
 } from "../data/TestData";
-import { Urls } from "../UtilsPage/urls";
+import { Urls } from "../config/BaseUrl";
 
 test("DemoBlaze", async ({ page }) => {
   const registerPage = new RegisterPage(page);

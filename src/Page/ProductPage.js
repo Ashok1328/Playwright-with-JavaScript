@@ -5,6 +5,7 @@ exports.ProductPage = class ProductPage {
   constructor(page) {
     this.page = page;
 
+    //Locators
     this.single_Product = page.locator(product_Locators.single_Product);
     this.addtoCart_Btn = page.locator(product_Locators.addtocart_Btn);
     this.home_Btn = page.locator(product_Locators.home_Btn);

@@ -1,10 +1,12 @@
 import { test } from "@playwright/test";
 import { LoginPage } from "../Page/LoginPage";
 import { login_Data } from "../data/TestData";
+import { Urls } from "../config/BaseUrl";
 
 test.describe("User Login", () => {
   test.beforeEach(async ({ page }) => {
-    await page.goto("/");
+    const urls = new Urls(page);
+    await urls.openPage();
   });
 
   test("should navigate to home page on success", async ({ page }) => {

@@ -3,10 +3,12 @@ import { LoginPage } from "../Page/LoginPage";
 import { login_Data, products_Data, shipping_Data } from "../data/TestData";
 import { ProductPage } from "../page/ProductPage";
 import { PlaceOrderPage } from "../page/PlaceOrderPage";
+import { Urls } from "../config/BaseUrl";
 
 test.describe("Shipping Address", () => {
   test.beforeEach(async ({ page }) => {
-    await page.goto("/");
+    const urls = new Urls(page);
+    await urls.openPage();
 
     const loginPage = new LoginPage(page);
     const data = login_Data().valid;
