@@ -38,6 +38,5 @@ exports.PlaceOrderPage = class PlaceOrderPage {
 
     await expect(this.ok_Btn).toBeVisible();
     await this.ok_Btn.click();
-    // await this.page.waitForTimeout(3000);
   }
 };

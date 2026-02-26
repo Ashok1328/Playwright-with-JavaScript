@@ -1,8 +1,0 @@
-"DESCRIPTION","DURATION IN MS","NAME","PARENT SUITE","START TIME","STATUS","STOP TIME","SUB SUITE","SUITE","TEST CLASS","TEST METHOD"
-"","2940","alert message should appear for invalid password","chromium","2026-02-23","passed","2026-02-23","User Login","Login.spec.js","",""
-"","2875","alert message should appear for invalid username","chromium","2026-02-23","passed","2026-02-23","User Login","Login.spec.js","",""
-"","5479","should navigate to home page on success","chromium","2026-02-23","passed","2026-02-23","User Login","Login.spec.js","",""
-"","16586","DemoBlaze","chromium","2026-02-23","failed","2026-02-23","","EndtoEndFlow.spec.js","",""
-"","59213","Delete product","chromium","2026-02-23","failed","2026-02-23","Delete product from the cart page","DeleteProduct.spec.js","",""
-"","2646","alert message should appear for empty fields","chromium","2026-02-23","passed","2026-02-23","User Login","Login.spec.js","",""
-"","2898","alert message should appear for invalid username/password","chromium","2026-02-23","passed","2026-02-23","User Login","Login.spec.js","",""
